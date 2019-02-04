@@ -174,12 +174,9 @@ let drawBackground = () => {
 }
 
 let fireRockets = () => {
-    if (!((game.time + 1) % 50)) {
+    if (!((game.time + 1) % 150)) {
         if (random([true, true, false])) {
             fireRocket()
-            if (random([true, false, false])) {
-                setTimeout(fireRocket, 750)
-            }
         }
     }
 }
@@ -192,4 +189,7 @@ let fireRocket = () => {
             canvas.height + 50
         )
     )
+    if (random([true, true, true, false])) {
+        setTimeout(fireRocket, 1000)
+    }
 }
