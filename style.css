@@ -1,0 +1,25 @@
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    justify-content: center;
+}
+
+canvas {
+    background: #000;
+    height: auto;
+    width: 75%;
+}
+
+img {
+    display: none;
+}
+
+#fullscreen {
+    cursor: pointer;
+}
+
+/*
+font-family: 'Staatliches', sans-serif;
+*/
