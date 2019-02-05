@@ -7,7 +7,7 @@ body {
 }
 
 canvas {
-    background: #000;
+    background: #009;
     height: auto;
     max-height: 750px;
     max-width: 75%;
@@ -17,7 +17,7 @@ img {
     display: none;
 }
 
-#fullscreen {
+.button {
     cursor: pointer;
 }
 
