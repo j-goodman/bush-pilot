@@ -57,6 +57,24 @@ let setupGame = () => {
         speed: 120,
         sprite: new Sprite (document.getElementById('img-plane'), 16),
     }
+    game.plane.sprite.mask = [
+        {"x":-265,"y":-165,"width":532,"height":334},
+        {"x":-246,"y":-169,"width":489,"height":336},
+        {"x":-175,"y":-170,"width":379,"height":339},
+        {"x":-85,"y":-169,"width":214,"height":343},
+        {"x":-77,"y":-168,"width":133,"height":336},
+        {"x":-83,"y":-169,"width":226,"height":338},
+        {"x":-170,"y":-173,"width":393,"height":341},
+        {"x":-235,"y":-169,"width":493,"height":338},
+        {"x":-266,"y":-170,"width":533,"height":341},
+        {"x":-261,"y":-173,"width":494,"height":343},
+        {"x":-223,"y":-169,"width":391,"height":336},
+        {"x":-142,"y":-171,"width":228,"height":340},
+        {"x":-57,"y":-169,"width":131,"height":337},
+        {"x":-129,"y":-169,"width":216,"height":337},
+        {"x":-202,"y":-169,"width":384,"height":330},
+        {"x":-246,"y":-171,"width":492,"height":342}
+    ]
     game.objects = []
     game.time = 0
     window.setInterval(gameLoop, 30)
