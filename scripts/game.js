@@ -22,7 +22,6 @@ window.addEventListener('load', initialize)
 
 let setupGame = () => {
     images.snow = document.getElementById('img-snow')
-    images.plane = document.getElementById('img-plane')
     images.rocket = document.getElementById('img-rocket')
     images.explosion = document.getElementById('img-explosion')
     images.backgrounds = {
@@ -51,11 +50,12 @@ let setupGame = () => {
         angle: 0, // 0-15
         pos: {
             x: 1700,
-            y: 1000,
+            y: 1400,
         },
         leftKeyDown: 0,
         rightKeyDown: 0,
-        speed: 100,
+        speed: 120,
+        sprite: new Sprite (document.getElementById('img-plane'), 16),
     }
     game.objects = []
     game.time = 0
@@ -66,7 +66,7 @@ let gameLoop = () => {
     drawBackground()
     movePlane()
     fireRockets()
-    drawPlane()
+    game.plane.sprite.draw(game.plane.pos.x, game.plane.pos.y, .75)
     game.objects.forEach(object => {
         object.move()
     })
@@ -140,11 +140,7 @@ let movePlane = () => {
         plane.barrelRoll = true
         plane.rollDirection = 1
     }
-}
-
-let drawPlane = () => {
-    let plane = game.plane
-    ctx.drawImage(images.plane, 0 + (535 * plane.angle), 0, 535, 341, plane.pos.x, plane.pos.y, 535 * .75, 341 * .75)
+    plane.sprite.frame = plane.angle
 }
 
 let drawBackground = () => {
@@ -190,6 +186,6 @@ let fireRocket = () => {
         )
     )
     if (random([true, true, true, false])) {
-        setTimeout(fireRocket, 1000)
+        setTimeout(fireRocket, (Math.random() * 1800 + 200))
     }
 }
